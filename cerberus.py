@@ -54,7 +54,7 @@ async def on_message(message):
 	words = ["help me hack", "help me break", "i need to hack", "i need to break", "help me hek"]
 	for word in words:
 		if message.content.find(word) != -1:
-			embed = discord.Embed(title="Read the Rules!" description=f"""You're asking something that violates the rules of this server please read the rules before asking something again. If you continue doing this you will be banned from this server permananetly!""")
+			embed = discord.Embed(title="Read the Rules!" description="You're asking something that violates the rules of this server please read the rules before asking something again. If you continue doing this you will be banned from this server permananetly!")
 			await message.channel.send(embed=embed)
 	else:
 		await client.process_commands(message)
