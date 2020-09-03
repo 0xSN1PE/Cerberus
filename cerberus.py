@@ -53,8 +53,9 @@ async def on_message(message):
 	#SKIDS
 	words = ["help me hack", "help me break", "i need to hack", "i need to break", "help me hek"]
 	for word in words:
-		if message.content.find(word) != -1: 
-			await message.channel.send("https://tenor.com/view/we-dont-do-that-here-black-panther-tchalla-bruce-gif-16558003")
+		if message.content.find(word) != -1:
+			embed = discord.Embed(title="Read the Rules!" description=f"You're asking something that violates the rules of this server please read the rules before asking something again. If you continue doing this you will be banned from this server permananetly!")
+			await message.channel.send(embed=embed)
 	else:
 		await client.process_commands(message)
 	
