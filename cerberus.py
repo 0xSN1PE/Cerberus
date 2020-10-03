@@ -7,18 +7,6 @@ from discord.utils import get
 
 client = commands.Bot(command_prefix='+')
 client.remove_command('help')
-ROLE = "Hacker"
-
-#WELCOME
-@client.event
-async def on_member_join(member):
-	#WELCOME CHANNEL
-    for channel in member.guild.channels:
-        if str(channel) == "welcome":
-            await channel.send(f"Welcome to the server {member.mention}. Happy Hacking!!")
-    #WELCOME AUTOROLE
-    role = get(member.guild.roles, name=ROLE)
-    await member.add_roles(role)
 
 
 @client.event
