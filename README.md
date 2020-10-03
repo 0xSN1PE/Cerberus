@@ -5,3 +5,4 @@ Hehe
 
 # Invite Cerberus to your server
 https://discord.com/oauth2/authorize?client_id=748403087214903407&permissions=536963094&scope=bot
+The BOT is offline for now as I am not hosting it
