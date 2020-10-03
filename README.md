@@ -1,6 +1,5 @@
 # Cerberus
 A dsicord bot written in discord.py rewrite for moderating cybersecurity related discord servers.
-The default welcome channel is set to #welcome and the prefix is "+"
 If you want to edit this bot according to your liking please fork this repository.
 Hehe
 
