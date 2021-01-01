@@ -1,6 +1,5 @@
 import discord
 import random
-import aiohttp
 import os
 from discord.ext import commands
 from discord.utils import get
@@ -14,11 +13,11 @@ async def on_message(message):
 
 	if message.author == client.user:
 		return
-	#HELP
+	
+  #HELP
 	if message.content == "+help":
 		embed = discord.Embed(title="Help", description="Bot Commands (+)", color=discord.Colour.blue())
 		embed.add_field(name="General Commands", value= f":star: `+ping - Latency Check`\n"
-								f":star: `+fox - Random Images of Fox`\n"
 								f":star: `+8ball <question>- Ask Questions`\n" 
 								f":star: `+how to hack - Get a list of useful resources`\n")
 
@@ -29,7 +28,7 @@ async def on_message(message):
 		embed = discord.Embed(title="Get started with Hacking!", description=f"""Ethical Hacking is an authorized practice of bypassing system security to identify potential data breaches and threats in a network. The company that owns the system or network allows Cyber Security engineers to perform such activities in order to test the system’s defenses. Thus, unlike malicious hacking, this process is planned, approved, and more importantly, legal. Ethical hackers aim to investigate the system or network weak points that malicious hackers can exploit or destroy. They collect and analyze the information to figure out ways to strengthen the security of the system/network/applications. By doing so,  they can improve the security footprint so that it can better withstand attacks or divert them. Here are some useful resources.""", 
 		color=discord.Colour.blue())
 
-		embed.add_field(name="Youtube Channels", value="Hackersploit\n" "Liveoverflow\n" "John Hammond\n" "Red Team Village\n" "DC Cybersec\n" "Null Byte\n" "Pwn Function\n"  "STOK\n")
+		embed.add_field(name="Youtube Channels", value="Hackersploit\n" "Liveoverflow\n" "John Hammond\n" "Red Team Village\n" "DC Cybersec\n" "Null Byte\n" "Pwn Function\n" "STOK\n" "The XSS Rat ")
 
 		embed.add_field(name="Certifications", value="CEH\n" "OSCP\n" "eCPPT\n" "Security+\n" )
 		embed.add_field(name="Programming Languages", value="Python\n" "C, C++\n" "Ruby\n" "Javascript\n")
@@ -38,6 +37,8 @@ async def on_message(message):
 		embed.add_field(name='Get Started', value="https://bit.ly/2Qvmmdg")
 		embed.set_image(url='https://blog.hyperiondev.com/wp-content/uploads/2019/01/Blog-Hacker-Languages.jpg')
 		await message.channel.send(content=None, embed=embed)
+
+    
 	#SKIDS
 	words = ["help me hack", "help me break", "i need to hack", "i need to break", "help me hek"]
 	for word in words:
@@ -160,17 +161,6 @@ async def warn(ctx, member: discord.Member):
                                 description="Permission Denied",
                                 color=0xff0000)
         await ctx.send(embed=embed)
-
-#FOX API
-@client.command()
-async def fox(ctx):
-    async with ctx.channel.typing():
-        async with aiohttp.ClientSession() as cs:
-            async with cs.get("https://randomfox.ca/floof/") as r:
-                data = await r.json()
-                embed = discord.Embed(title="Floof")
-                embed.set_image(url=data['image'])
-                await ctx.send(embed=embed)
 
 
 TOKEN = os.getenv("DISCORD_TOKEN")
