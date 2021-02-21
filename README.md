@@ -1,5 +1,5 @@
 # Cerberus
-A dsicord bot written in discord.py rewrite for moderating cybersecurity related discord servers.
+A discord bot written in discord.py rewrite for moderating cybersecurity related discord servers.
 If you want to edit this bot according to your liking please fork this repository.
 
 # Invite Cerberus to your server
