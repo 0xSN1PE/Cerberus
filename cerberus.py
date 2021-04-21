@@ -87,5 +87,5 @@ async def _8ball(ctx, *, question):
 				]
 	await ctx.send(f"**Question:** {question}\n**Answer:** {random.choice(responses)}")
 
-TOKEN = os.getenv(DISCORD_TOKEN)
+TOKEN = os.getenv("DISCORD_TOKEN")
 client.run(TOKEN)
