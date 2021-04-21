@@ -21,7 +21,6 @@ async def on_message(message):
 								f":star: `+8ball <question>- Ask Questions`\n" 
 								f":star: `+how to hack - Get a list of useful resources`\n"
 								f":star: `+owasp top 10 - OWASP TOP 10 Vulneabilities`\n")
-
 		await message.channel.send(content=None, embed=embed)
 
 	#How to Hack
@@ -38,23 +37,23 @@ async def on_message(message):
 		embed.add_field(name='Get Started', value="https://bit.ly/2Qvmmdg")
 		embed.set_image(url='https://blog.hyperiondev.com/wp-content/uploads/2019/01/Blog-Hacker-Languages.jpg')
 		await message.channel.send(content=None, embed=embed)
+
 	#OWASP TOP 10
 	if message.content == "+owasp top 10":
-		embed = discord.Embed(title="OWASP TOP 10", description=f"""
-		
-    	> **Injection.** Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.\n
-    	> **Broken Authentication.** Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users’ identities temporarily or permanently.\n
-    	> **Sensitive Data Exposure.** Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser.\n
-    	> **XML External Entities (XXE).** Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks.\n
-    	> **Broken Access Control.** Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users’ accounts, view sensitive files, modify other users’ data, change access rights, etc.\n
-    	> **Security Misconfiguration.** Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion.\n
-   	 	> **Cross-Site Scripting (XSS).** XSS flaws occur whenever an application includes untrusted data in a new web page without proper validation or escaping, or updates an existing web page with user-supplied data using a browser API that can create HTML or JavaScript. XSS allows attackers to execute scripts in the victim’s browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites.\n
-    	> **Insecure Deserialization.** Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks.\n
-    	> **Using Components with Known Vulnerabilities.** Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts.\n
-    	> **Insufficient Logging & Monitoring.** Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data. Most breach studies show time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.\n
-	""", 
-		color=discord.Colour.blue())
+		embed = discord.Embed(title="OWASP TOP 10", description=("Owasp Top 10 is a list of top ten web application vulnerabilities"))
+		embed.add_field(name="1. Injection", value="Injection flaws, such as SQL, NoSQ, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker’s hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.")
+		embed.add_field(name="2. Broken Authentication", value="Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users’ identities temporarily or permanently.")
+		embed.add_field(name="3. Sensitive Data Exposure", value="Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser.")
+		embed.add_field(name="4. XML External Entities (XXE)", value="Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks.")
+		embed.add_field(name="5. Broken Access Control", value="Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users’ accounts, view sensitive files, modify other users’ data, change access rights, etc.")
+		embed.add_field(name="6. Security Misconfiguration", value="Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion.")
+		embed.add_field(name="7. Cross-Site Scripting (XSS)", value="XSS flaws occur whenever an application includes untrusted data in a new web page without proper validation or escaping, or updates an existing web page with user-supplied data using a browser API that can create HTML or JavaScript. XSS allows attackers to execute scripts in the victim’s browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites.")
+		embed.add_field(name="8. Insecure Deserialization", value="Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks.")
+		embed.add_field(name="9. Using Components with Known Vulnerabilities", value="Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts.")
+		embed.add_field(name="10. Insufficient Logging & Monitoring", value="Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data. Most breach studies show time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring.")
 		await message.channel.send(content=None, embed=embed)
+	else:
+		await client.process_commands(message)
 
 #PING
 @client.command()
@@ -88,28 +87,5 @@ async def _8ball(ctx, *, question):
 				]
 	await ctx.send(f"**Question:** {question}\n**Answer:** {random.choice(responses)}")
 
-#WARN MEMBER
-@client.command()
-async def warn(ctx, member: discord.Member):
-    if ctx.message.author.guild_permissions.administrator :
-        if member.guild_permissions.administrator:
-            embed = discord.Embed(title="Error",
-                                  description="You cant warn an Administrator",
-                                  color=0xff0000)
-            await ctx.send(embed=embed)
-        else:
-            embed = discord.Embed(title="Warned!",
-            description="**{0}** has been warned by **{1}**!".format(member.name, ctx.message.author),
-                                  color=0x00FF00)
-            await ctx.send(embed=embed)
-    else:
-        embed = discord.Embed(title="Error",
-                                description="Permission Denied",
-                                color=0xff0000)
-        await ctx.send(embed=embed)
-
-
-TOKEN = os.getenv("DISCORD_TOKEN")
+TOKEN = os.getenv(DISCORD_TOKEN)
 client.run(TOKEN)
-
-#hacekrsarcade.tech
