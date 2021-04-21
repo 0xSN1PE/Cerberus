@@ -19,7 +19,7 @@ async def on_message(message):
 		embed = discord.Embed(title="Help", description="Bot Commands (+)", color=discord.Colour.blue())
 		embed.add_field(name="General Commands", value= f":star: `+ping - Latency Check`\n"
 								f":star: `+8ball <question>- Ask Questions`\n" 
-								f":star: `+how to hack - Get a list of useful resources`\n
+								f":star: `+how to hack - Get a list of useful resources`\n"
 								f":star: `+owasp top 10 - OWASP TOP 10 Vulneabilities`\n")
 
 		await message.channel.send(content=None, embed=embed)
