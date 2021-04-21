@@ -37,15 +37,6 @@ async def on_message(message):
 		embed.add_field(name='Get Started', value="https://bit.ly/2Qvmmdg")
 		embed.set_image(url='https://blog.hyperiondev.com/wp-content/uploads/2019/01/Blog-Hacker-Languages.jpg')
 		await message.channel.send(content=None, embed=embed)
-
-    
-	#SKIDS
-#	words = ["help me hack", "help me break", "i need to hack", "i need to break", "help me hek"]
-#	for word in words:
-#		if message.content.find(word) != -1:
-#			await message.channel.send(embed=embed)
-#	else:
-#		await client.process_commands(message)
 	
 #PING
 @client.command()
